@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bioinformatics Pipeline Report</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+  h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
+  h2 { color: #2980b9; margin-top: 30px; }
+  .card { background: white; border-radius: 8px; padding: 20px; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+  .stat-box { background: #3498db; color: white; padding: 15px; border-radius: 8px; text-align: center; }
+  .stat-box.green { background: #27ae60; }
+  .stat-box.orange { background: #e67e22; }
+  .stat-box.red { background: #e74c3c; }
+  .stat-value { font-size: 28px; font-weight: bold; }
+  .stat-label { font-size: 12px; opacity: 0.9; margin-top: 5px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  th { background: #2c3e50; color: white; padding: 10px; text-align: left; }
+  td { padding: 8px 10px; border-bottom: 1px solid #eee; }
+  tr:hover { background: #f9f9f9; }
+  .badge { padding: 3px 8px; border-radius: 4px; font-size: 12px; color: white; }
+  .transition { background: #2196F3; }
+  .transversion { background: #E91E63; }
+  .codon { display: inline-block; padding: 3px 6px; margin: 2px; border-radius: 4px; background: #ecf0f1; font-family: monospace; font-size: 13px; }
+  .codon.start { background: #27ae60; color: white; }
+  .codon.stop { background: #e74c3c; color: white; }
+  .sequence-box { font-family: monospace; word-break: break-all; background: #2c3e50; color: #2ecc71; padding: 15px; border-radius: 8px; font-size: 13px; line-height: 1.8; }
+  .footer { text-align: center; color: #7f8c8d; margin-top: 30px; font-size: 13px; }
+  img { max-width: 100%; border-radius: 8px; margin-top: 10px; }
+</style>
+</head>
+<body>
+<h1>Mini Bioinformatics Pipeline Report</h1>
+<p><strong>Generated:</strong> 25-03-2026 15:09:16 | <strong>Author:</strong> Padma Shree</p>
+
+<div class="card">
+  <h2>Pipeline Summary</h2>
+  <div class="stats-grid">
+    <div class="stat-box">
+      <div class="stat-value">33</div>
+      <div class="stat-label">Total Bases</div>
+    </div>
+    <div class="stat-box green">
+      <div class="stat-value">45.45%</div>
+      <div class="stat-label">GC Content</div>
+    </div>
+    <div class="stat-box orange">
+      <div class="stat-value">6</div>
+      <div class="stat-label">Codons Translated</div>
+    </div>
+    <div class="stat-box red">
+      <div class="stat-value">3</div>
+      <div class="stat-label">Mutations Detected</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">90.91%</div>
+      <div class="stat-label">Sequence Similarity</div>
+    </div>
+    <div class="stat-box green">
+      <div class="stat-value">9.09%</div>
+      <div class="stat-label">Mutation Rate</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>Module 1 — DNA Sequence Analysis</h2>
+  <div class="sequence-box">ATGCTTGAATTTGCCTAAGGCTAGCTAGCATGC</div>
+  <table>
+    <tr><th>Property</th><th>Value</th></tr>
+    <tr><td>Length</td><td>33 bases</td></tr>
+    <tr><td>GC Content</td><td>45.45%</td></tr>
+    <tr><td>AT/GC Ratio</td><td>1.2</td></tr>
+    <tr><td>A count</td><td>8</td></tr>
+    <tr><td>T count</td><td>10</td></tr>
+    <tr><td>G count</td><td>8</td></tr>
+    <tr><td>C count</td><td>7</td></tr>
+    <tr><td>Complement</td><td style="font-family:monospace">TACGAACTTAAACGGATTCCGATCGATCGTACG</td></tr>
+    <tr><td>Reverse Complement</td><td style="font-family:monospace">GCATGCTAGCTAGCCTTAGGCAAATTCAAGCAT</td></tr>
+    <tr><td>Interpretation</td><td>Balanced</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>Module 2 — Transcription and Translation</h2>
+  <p><strong>RNA Transcript:</strong></p>
+  <div class="sequence-box">AUGCUUGAAUUUGCCUAAGGCUAGCUAGCAUGC</div>
+  <p><strong>Protein Codons:</strong></p>
+  <div><span class='codon start' title='Met(START)'>AUG</span><span class='codon ' title='Leu'>CUU</span><span class='codon ' title='Glu'>GAA</span><span class='codon ' title='Phe'>UUU</span><span class='codon ' title='Ala'>GCC</span><span class='codon stop' title='STOP'>UAA</span></div>
+  <p>STOP codon found: <strong>Yes</strong> | Total codons: <strong>6</strong></p>
+</div>
+
+<div class="card">
+  <h2>Module 3 — Mutation Detection</h2>
+  
+  <div class="stats-grid">
+    <div class="stat-box"><div class="stat-value">3</div><div class="stat-label">Total SNPs</div></div>
+    <div class="stat-box green"><div class="stat-value">1</div><div class="stat-label">Transitions</div></div>
+    <div class="stat-box red"><div class="stat-value">2</div><div class="stat-label">Transversions</div></div>
+  </div>
+  <table>
+    <tr><th>Position</th><th>Original</th><th>Mutated</th><th>Type</th></tr>
+    
+            <tr>
+                <td>5</td>
+                <td>T</td>
+                <td>A</td>
+                <td><span class="badge transversion">Transversion</span></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>T</td>
+                <td>A</td>
+                <td><span class="badge transversion">Transversion</span></td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>A</td>
+                <td>G</td>
+                <td><span class="badge transition">Transition</span></td>
+            </tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>Analysis Dashboard</h2>
+  <img src="pipeline_dashboard.png" alt="Pipeline Dashboard">
+</div>
+
+<div class="footer">
+  <p>Generated by Mini Bioinformatics Pipeline | Author: Padma Shree | Built with guidance from Claude AI (Anthropic)</p>
+</div>
+</body>
+</html>
